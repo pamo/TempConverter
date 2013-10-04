@@ -14,8 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *valueTextField;
 - (IBAction)convertTemperature:(id)sender;
 - (IBAction)dismissOnTap:(id)sender;
--(void)convertToCelsius;
--(void)convertToFahrenheit;
 @end
 
 @implementation TempViewController
@@ -43,18 +41,18 @@
 
 - (IBAction)convertTemperature:(id)sender{
     UISegmentedControl *selectedSegment = sender;
+    float currentTemperature = [self.valueTextField.text floatValue];
+    float convertedTemperature = currentTemperature;
+    
     if ([selectedSegment selectedSegmentIndex] == 0) {
-        [self convertToCelsius];
-    } else if([selectedSegment selectedSegmentIndex] == 1){
-        [self convertToFahrenheit];
-    }
+        // Deduct 32, then multiply by 5, then divide by 9
+        convertedTemperature = ((currentTemperature - 32) * 5)/9;
 
-}
--(void) convertToCelsius{
-    NSLog(@"convert %@ to celsius", [self.valueTextField text]);
-}
--(void) convertToFahrenheit{
-    NSLog(@"convert %@ to fahrenheit", [self.valueTextField text]);
+    } else if([selectedSegment selectedSegmentIndex] == 1){
+        // Multiply by 9, then divide by 5, then add 32
+        convertedTemperature = ((currentTemperature * 9) / 5) + 32;
+    }
+    self.valueTextField.text = [NSString stringWithFormat:@"%0.2f", convertedTemperature];
 }
 - (IBAction)dismissOnTap:(id)sender {
     [self.view endEditing:YES];
