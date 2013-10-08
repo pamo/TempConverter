@@ -9,8 +9,7 @@
 #import "TempViewController.h"
 
 @interface TempViewController ()
-@property (weak, nonatomic) IBOutlet UISegmentedControl *fahrenheitButton;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *celsiusButton;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *convertControl;
 @property (weak, nonatomic) IBOutlet UITextField *valueTextField;
 - (IBAction)convertTemperature:(id)sender;
 - (IBAction)dismissOnTap:(id)sender;
