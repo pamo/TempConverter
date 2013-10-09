@@ -16,9 +16,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="zv5-XC-3rC">
+                <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="zv5-XC-3rC">
                     <rect key="frame" x="82" y="222" width="157" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="157" id="1V3-b1-JOQ"/>
+                        <constraint firstAttribute="height" constant="28" id="YXp-9O-RBv"/>
+                    </constraints>
                     <segments>
                         <segment title="Celsius"/>
                         <segment title="Fahrenheit"/>
@@ -28,21 +32,25 @@
                         <action selector="convertToCelsius:" destination="-1" eventType="touchDown" id="wAD-xJ-N2H"/>
                     </connections>
                 </segmentedControl>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Yle-Tt-nbm">
-                    <rect key="frame" x="112" y="113" width="97" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Yle-Tt-nbm">
+                    <rect key="frame" x="110" y="113" width="100" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="wTA-WH-SsB"/>
+                        <constraint firstAttribute="height" constant="30" id="zdN-dp-hMe"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
-                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yvp-Cg-U5M">
+                <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yvp-Cg-U5M">
                     <rect key="frame" x="0.0" y="19" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <items>
                         <navigationItem title="Temperature Converter" id="E7G-90-ORZ"/>
                     </items>
                 </navigationBar>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rU5-8u-2hQ">
-                    <rect key="frame" x="152" y="168" width="16" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rU5-8u-2hQ">
+                    <rect key="frame" x="152" y="170" width="16" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -50,6 +58,16 @@
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="rU5-8u-2hQ" secondAttribute="centerX" id="3Cf-Wl-dsF"/>
+                <constraint firstAttribute="centerX" secondItem="Yle-Tt-nbm" secondAttribute="centerX" id="C4L-k2-aoN"/>
+                <constraint firstItem="rU5-8u-2hQ" firstAttribute="centerX" secondItem="yvp-Cg-U5M" secondAttribute="centerX" id="H87-tP-dSu"/>
+                <constraint firstItem="zv5-XC-3rC" firstAttribute="top" secondItem="rU5-8u-2hQ" secondAttribute="bottom" constant="31" id="JOT-qN-qLu"/>
+                <constraint firstAttribute="centerX" secondItem="Yle-Tt-nbm" secondAttribute="centerX" id="XzX-fd-yFx"/>
+                <constraint firstItem="rU5-8u-2hQ" firstAttribute="top" secondItem="Yle-Tt-nbm" secondAttribute="bottom" constant="27" id="azx-zi-moZ"/>
+                <constraint firstAttribute="centerX" secondItem="rU5-8u-2hQ" secondAttribute="centerX" id="cRZ-Zi-2Px"/>
+                <constraint firstAttribute="centerX" secondItem="zv5-XC-3rC" secondAttribute="centerX" id="hR4-G0-oFr"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
